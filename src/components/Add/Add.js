@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Add.scss'
 import {AddBtn} from './AddBtn';
 import {AddInput} from './AddInput';
 
-const Add = () => {
+const Add = ({ addtodo }) => {
+ const [input, setInput] = useState('')
+ 
+ const inputChange = (e) => {
+  setInput(e.target.value)
+ }
+
+ const addClick = () => {
+  addtodo(input)
+ }
+
  return (
   <div className="add">
-   <AddInput/>
-   <AddBtn/>
+   <AddInput inputchange={ inputChange } inputtext = { input }/>
+   <AddBtn addclick = { addClick } />
   </div>
  )
 }

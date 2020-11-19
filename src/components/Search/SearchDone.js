@@ -1,9 +1,9 @@
 import React from 'react'
 
-const SearchDone = () => {
+const SearchDone = ({ setfilter }) => {
  return (
   <>
-   <button className="btn">Done</button>
+   <button className="btn" onClick = { () => setfilter(2) }>Done</button>
   </>
  )
 }
